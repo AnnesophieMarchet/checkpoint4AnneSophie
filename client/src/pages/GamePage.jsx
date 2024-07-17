@@ -3,8 +3,9 @@ import Game from "../components/Game";
 
 export default function GamePage() {
   const games = useLoaderData();
+
   return (
-    <>
+    <div className="p-8 flex flex-col items-center ms:items-end">
       {games.map((game) => (
         <Game
           key={game.id}
@@ -13,6 +14,6 @@ export default function GamePage() {
           user={game.user_id}
         />
       ))}
-    </>
+    </div>
   );
 }
