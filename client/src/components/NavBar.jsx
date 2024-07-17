@@ -6,7 +6,7 @@ export default function NavBar() {
   const [user] = useState(false);
 
   return (
-    <nav style={{ backgroundColor: "black" }}>
+    <nav className="bg-red-500">
       <div>
         <img src={Logo} alt="logo" />
       </div>
