@@ -36,6 +36,7 @@ const router = createBrowserRouter([
       {
         path: "/login-page",
         id: "login-page",
+        // loader: async () => fetch(`${ApiUrl}/api/users/login`),
         element: <LoginPage />,
       },
       {

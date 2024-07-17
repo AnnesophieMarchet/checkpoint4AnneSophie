@@ -41,35 +41,60 @@ export default function SignUpPage() {
     }
   };
   return (
-    <div>
+    <div className=" flex flex-col  mx-auto max-w-sm  pt-5 ">
+      <div className="flex justify-center mb-20 mt-36">
+        <p className="font-custom text-2xl">Registration</p>
+      </div>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="username">Nom de famille</label>
+        <div className="mb-4">
+          {/* <label htmlFor="username" className="block">
+            Nom de famille
+          </label> */}
           <input
             onChange={handleChange}
             value={register.username}
             type="text"
             id="username"
             name="username"
+            placeholder="Username"
+            className="w-full  px-3 py-2 border font-custom rounded-md focus:outline-none focus:border-colorblack focus:ring focus:ring-primary focus:ring-opacity-20"
           />
-
-          <label htmlFor="email">Adresse mail</label>
+        </div>
+        <div className="mb-4">
+          {/* <label htmlFor="email" className="block">
+            Adresse mail
+          </label> */}
           <input
             onChange={handleChange}
             value={register.email}
             type="text"
             id="email"
             name="email"
+            placeholder="Email"
+            className="w-full  px-3 py-2 border font-custom rounded-md focus:outline-none focus:border-colorblack focus:ring focus:ring-primary focus:ring-opacity-20"
           />
-          <label htmlFor="password">Mot de passe</label>
+        </div>
+        <div className="mb-20">
+          {/* <label htmlFor="password" className="block">
+            Mot de passe
+          </label> */}
           <input
             onChange={handleChange}
             value={register.password}
             type="password"
             id="password"
             name="password"
+            placeholder="Password"
+            className="  w-full px-3 py-2 border font-custom rounded-md focus:outline-none focus:border-colorblack focus:ring focus:ring-primary focus:ring-opacity-20"
           />
-          <button type="submit">Submit</button>
+        </div>
+        <div className="flex justify-end">
+          <button
+            type="submit"
+            className=" w-full bg-black  text-primary text-xl py-2 px-4 rounded-md"
+          >
+            Submit
+          </button>
         </div>
       </form>
     </div>

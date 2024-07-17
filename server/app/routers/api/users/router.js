@@ -10,10 +10,11 @@ const router = express.Router();
 
 const { browse, add } = require("../../../controllers/UserActions");
 const { hashPassword } = require("../../../services/auth");
+const { login, logout } = require("../../../controllers/AuthActions");
 
 router.get("/", browse);
-// router.post("/login", login);
-// router.get("/logout", logout);
+router.post("/login", login);
+router.get("/logout", logout);
 router.post("/registers", hashPassword, add);
 
 // /* ***********************Route Protégé ************************************************** */

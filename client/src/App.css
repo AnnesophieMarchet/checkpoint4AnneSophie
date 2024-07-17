@@ -1,0 +1,5 @@
+body {
+  background-image: url("../src/assets/images/BG.png"); /* Chemin vers ton image */
+  /* Ajuste la taille de l'image pour couvrir tout l'arrière-plan */
+  /* Autres styles globaux */
+}
