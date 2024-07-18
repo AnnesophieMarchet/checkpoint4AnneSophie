@@ -12,8 +12,14 @@ class GameRepository extends AbstractRepository {
   async create(game) {
     // Execute the SQL INSERT query to add a new game to the "game" table
     const [result] = await this.database.query(
-      `insert into ${this.table} (title, description, user_id) values (?, ?,?)`,
-      [game.title, game.description, game.user_id]
+      `insert into ${this.table} (title, description,genre, release_date, user_id) values (?, ?, ?,?,?)`,
+      [
+        game.title,
+        game.description,
+        game.genre,
+        game.release_date,
+        game.user_id,
+      ]
     );
 
     // Return the ID of the newly inserted game

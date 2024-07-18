@@ -1,5 +1,8 @@
 body {
-  background-image: url("../src/assets/images/BG.png"); /* Chemin vers ton image */
+  background-image: url("../src/assets/images/BG.png");
+  /* background-repeat: no-repeat; */
+  background-size: auto;
+
   /* Ajuste la taille de l'image pour couvrir tout l'arrière-plan */
   /* Autres styles globaux */
 }

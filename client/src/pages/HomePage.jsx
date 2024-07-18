@@ -11,7 +11,7 @@ export default function HomePage() {
           <div className="flex justify-end mr-20 mt-10">
             <button
               type="submit"
-              className="  bg-black  text-primary text-xl py-2 px-4 rounded-md"
+              className="  bg-black  text-colorwhite text-xl py-2 px-4 rounded-md"
             >
               Start
             </button>
@@ -22,7 +22,7 @@ export default function HomePage() {
           <div className="flex justify-end mr-20 mt-10">
             <button
               type="submit"
-              className="  bg-black  text-primary text-xl py-2 px-4 rounded-md"
+              className="  bg-black  text-colorwhite text-xl py-2 px-4 rounded-md"
             >
               Start
             </button>

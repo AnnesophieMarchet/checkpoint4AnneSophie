@@ -4,6 +4,8 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import App from "./App";
+import GameForm from "./components/GameForm";
+import GameResultPage from "./components/GameResultPage";
 import GamePage from "./pages/GamePage";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
@@ -27,11 +29,20 @@ const router = createBrowserRouter([
         loader: async () => fetch(`${ApiUrl}/api/games`),
         element: <GamePage />,
       },
-
+      {
+        path: "/game-result/:id",
+        id: "game-result-list",
+        element: <GameResultPage />,
+      },
       {
         path: "/sign-up-page",
         id: "sign-up-page",
         element: <SignUpPage />,
+      },
+      {
+        path: "/game-form",
+        id: "game-form",
+        element: <GameForm />,
       },
       {
         path: "/login-page",

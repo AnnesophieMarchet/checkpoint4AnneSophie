@@ -1,0 +1,13 @@
+/* Game.module.css */
+.gameCard {
+  width: 600px;
+}
+
+@media (max-width: 768px) {
+  .gameCard {
+    max-width: 300px;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+}

@@ -28,24 +28,24 @@ export default function NavBar() {
       </div>
 
       <div className="flex items-center gap-12 mr-7">
-        <Link to="/" className="text-white text-xl">
+        <Link to="/" className="text-primary text-xl">
           Home
         </Link>
         {user ? (
           <>
-            <Link to="/game-result" className="text-white text-xl">
+            <Link to="/game-result" className="text-primary text-xl">
               Game
             </Link>
-            <Link to="/profile" className="text-white text-xl">
+            <Link to="/profile" className="text-primary text-xl">
               Profile
             </Link>
           </>
         ) : (
           <>
-            <Link to="/sign-up-page" className="text-white text-xl">
+            <Link to="/sign-up-page" className="text-primary text-xl">
               SignUp
             </Link>
-            <Link to="/login-page" className="text-white text-xl">
+            <Link to="/login-page" className="text-primary text-xl">
               Connexion
             </Link>
           </>

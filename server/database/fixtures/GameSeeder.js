@@ -8,17 +8,23 @@ const games = [
   {
     title: "Zelda",
     description: "tears of kingdom",
+    genre: "combat",
+    release_date: "2020-01-21",
     user_id: 1,
   },
   {
     title: "Zelda et link ",
     description: "tears of kingdom",
+    genre: "combat",
+    release_date: "2020-01-21",
     user_id: 2,
   },
   {
     title: "Zelda Breath of the wild ",
     description: "tears of kingdom",
-    user_id: 2,
+    genre: "combat",
+    release_date: "2020-01-21",
+    user_id: 3,
   },
 ];
 
@@ -34,6 +40,8 @@ class GameSeeder extends AbstractSeeder {
       const values = {
         title: game.title,
         description: game.description,
+        genre: game.genre,
+        release_date: game.release_date,
         user_id: game.user_id,
       };
       this.insert(values);

@@ -2,17 +2,18 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const ApiUrl = import.meta.env.VITE_API_URL;
-export default function SignUpPage() {
+export default function GameForm() {
   const navigate = useNavigate();
-  const [register, setRegister] = useState({
-    username: "",
-    email: "",
-    password: "",
+  const [games, setGames] = useState({
+    title: "",
+    description: "",
+    genre: "",
+    release_date: "",
   });
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setRegister({
-      ...register,
+    setGames({
+      ...games,
       [name]: value,
     });
   };
@@ -20,20 +21,21 @@ export default function SignUpPage() {
     e.preventDefault();
 
     try {
-      const response = await fetch(`${ApiUrl}/api/users/registers`, {
+      const response = await fetch(`${ApiUrl}/api/games/add`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(register),
+        body: JSON.stringify(games),
+        credentials: "include",
       });
       if (!response.ok) {
-        throw new Error("Erreur lors de l'inscription");
+        throw new Error("Erreur lors du rajout du jeu");
       }
 
       const data = await response.json();
       console.info("Success:", data);
-      navigate("/login-page");
+      navigate("/game-result");
       return data;
     } catch (err) {
       console.error("Fetch error:", err);
@@ -43,20 +45,20 @@ export default function SignUpPage() {
   return (
     <div className=" flex flex-col  mx-auto max-w-sm  pt-5 ">
       <div className="flex justify-center mb-20 mt-36">
-        <p className="font-custom text-4xl">Registration</p>
+        <p className="font-custom text-2xl">Add a game</p>
       </div>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
-          {/* <label htmlFor="username" className="block">
+          {/* <label htmlFor="title" className="block">
             Nom de famille
           </label> */}
           <input
             onChange={handleChange}
-            value={register.username}
+            value={games.title}
             type="text"
-            id="username"
-            name="username"
-            placeholder="Username"
+            id="title"
+            name="title"
+            placeholder="title"
             className="w-full  px-3 py-2 border font-custom rounded-md focus:outline-none focus:border-colorblack focus:ring focus:ring-primary focus:ring-opacity-20"
           />
         </div>
@@ -66,28 +68,43 @@ export default function SignUpPage() {
           </label> */}
           <input
             onChange={handleChange}
-            value={register.email}
+            value={games.description}
             type="text"
-            id="email"
-            name="email"
-            placeholder="Email"
+            id="description"
+            name="description"
+            placeholder="description"
             className="w-full  px-3 py-2 border font-custom rounded-md focus:outline-none focus:border-colorblack focus:ring focus:ring-primary focus:ring-opacity-20"
           />
         </div>
-        <div className="mb-20">
-          {/* <label htmlFor="password" className="block">
-            Mot de passe
+        <div className="mb-4">
+          {/* <label htmlFor="email" className="block">
+            Adresse mail
           </label> */}
           <input
             onChange={handleChange}
-            value={register.password}
-            type="password"
-            id="password"
-            name="password"
-            placeholder="Password"
-            className="  w-full px-3 py-2 border font-custom rounded-md focus:outline-none focus:border-colorblack focus:ring focus:ring-primary focus:ring-opacity-20"
+            value={games.genre}
+            type="text"
+            id="genre"
+            name="genre"
+            placeholder="genre"
+            className="w-full  px-3 py-2 border font-custom rounded-md focus:outline-none focus:border-colorblack focus:ring focus:ring-primary focus:ring-opacity-20"
           />
         </div>
+        <div className="mb-4">
+          {/* <label htmlFor="email" className="block">
+            Adresse mail
+          </label> */}
+          <input
+            onChange={handleChange}
+            value={games.release_date}
+            type="date"
+            id="release_date"
+            name="release_date"
+            placeholder="release_date"
+            className="w-full  px-3 py-2 border font-custom rounded-md focus:outline-none focus:border-colorblack focus:ring focus:ring-primary focus:ring-opacity-20"
+          />
+        </div>
+
         <div className="flex justify-end">
           <button
             type="submit"
