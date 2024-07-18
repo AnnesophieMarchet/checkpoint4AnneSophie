@@ -47,6 +47,16 @@ class GameRepository extends AbstractRepository {
     return rows;
   }
 
+  // The D of CRUD - Delete operation
+  async delete(id) {
+    const [result] = await this.database.query(
+      `delete from ${this.table} where id = ?`,
+      [id]
+    );
+
+    return result;
+  }
+
   // The U of CRUD - Update operation
   // TODO: Implement the update operation to modify an existing game
 

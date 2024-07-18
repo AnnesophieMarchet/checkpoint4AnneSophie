@@ -87,7 +87,7 @@ export default function LoginPage() {
             Submit
           </button>
         </form>
-        <p className="flex justify-end font-custom pr-2  text-gray-500">
+        <p className="flex justify-end font-custom pr-2  text-primary">
           Pas encore de compte ?&nbsp;
           <Link to="/sign-up-page" className="underline text-primary">
             M'inscrire
