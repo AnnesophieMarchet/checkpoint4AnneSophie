@@ -43,21 +43,30 @@ function GameResultPage() {
       navigate("/login-page");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [user, id]);
+  }, [user, id, navigate]);
 
   if (!gameDetails) {
     return <div>Chargement des détails du jeu...</div>;
   }
 
   return (
-    <div>
-      <h2>{gameDetails.title}</h2>
-      <p>{gameDetails.description}</p>
-      <p>Utilisateur ID: {gameDetails.user_id}</p>
-
-      <p>Genre: {gameDetails.genre}</p>
-      <p>Date de sortie: {gameDetails.release_date}</p>
-    </div>
+    <>
+      <div className="flex justify-center mb-20 mt-36">
+        <p className="font-custom text-4xl text-gray-800">
+          {gameDetails.title}
+        </p>
+      </div>
+      <div className="flex flex-col mx-auto max-w-md p-20 bg-secondary opacity-80   rounded-lg shadow-xl ">
+        <h2 className="text-2xl font-bold mb-4 text-gray-800">
+          {gameDetails.title}:
+        </h2>
+        <p className="text-primary mb-2">
+          Description : {gameDetails.description}
+        </p>
+        <p className="text-primary mb-2">Genre : {gameDetails.genre}</p>
+        <p className="text-primary mb-2">Sortie : {gameDetails.release_date}</p>
+      </div>
+    </>
   );
 }
 

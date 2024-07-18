@@ -4,7 +4,7 @@ export default {
     extend: {
       colors: {
         primary: "#FFFDE4", // Définir une couleur primaire personnalisée
-        secondary: "#851342",
+        secondary: "#3B5372",
         colorwhite: "#FFFFFF", // Définir une couleur secondaire personnalisée
         colorblack: "#000000", // Vous pouvez ajouter d'autres couleurs personnalisées ici si nécessaire
       },
