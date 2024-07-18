@@ -20,7 +20,7 @@ function Game({ id, title, description, onDeleteClick, onDetailClick }) {
     >
       <h2 className="text-2xl font-bold mb-2">{title}</h2>
       <p className="text-gray-700 mb-4">{description}</p>
-      {/* <p className="text-gray-600">Utilisateur ID: {user}</p> */}
+
       <div className="flex justify-end space-x-4 mt-4">
         <button
           type="button"

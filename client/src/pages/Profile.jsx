@@ -18,8 +18,8 @@ export default function Profile() {
         <div className="w-full text-center text-xl font-bold mb-4">
           You're connected
         </div>
-        <div className="w-full text-center mb-4">{user.username}</div>
         <div className="w-full text-center mb-4">{user.email}</div>
+        <div className="w-full text-center mb-4">{user.username}</div>
         <button
           type="button"
           onClick={handleLogout}
