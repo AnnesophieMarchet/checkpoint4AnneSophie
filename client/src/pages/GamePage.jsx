@@ -9,7 +9,8 @@ export default function GamePage() {
   const navigate = useNavigate();
   const { logout, user } = useUserContext();
   const [games, setGames] = useState([]);
-  const [setGameId] = useState(null);
+  const [gameId, setGameId] = useState(null);
+  console.info(gameId);
   const notifyInfo = (text) => toast.info(text);
 
   // Charger les données initiales des jeux
@@ -49,7 +50,7 @@ export default function GamePage() {
       });
 
       if (response.ok) {
-        notifyInfo("Jeu supprimé avec succès");
+        notifyInfo("Game deleted with succes");
         // Mettre à jour la liste des jeux localement
         setGames((prevGames) => prevGames.filter((game) => game.id !== id));
       } else {
@@ -78,25 +79,8 @@ export default function GamePage() {
 
   return (
     <>
-      <div className="flex flex-col items-center mt-10 ">
-        {/* <div className="flex mt-8 mb-8">
-          <p className="text-4xl text-colorblack">{`Welcome ${user.username}`}</p>
-        </div> */}
-
-        {/* <div className="mb-8">
-          <Link to="/game-form">
-            <button
-              type="button"
-              className="bg-black text-colorwhite text-xl py-2 px-4 rounded-md"
-            >
-              Add game
-            </button>
-          </Link>
-        </div> */}
-      </div>
-
       {games.map((game) => (
-        <div key={game.id} className="flex justify-end">
+        <div key={game.id} className="flex justify-end mt-10 ">
           <Game
             onDeleteClick={() => deleteGame(game.id)}
             onDetailClick={() => handleGameClick(game.id)}
