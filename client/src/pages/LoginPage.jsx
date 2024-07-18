@@ -47,7 +47,7 @@ export default function LoginPage() {
     <div className="pt-5">
       <div className=" flex flex-col  mx-auto max-w-sm   ">
         <div className="flex justify-center mb-20 mt-36">
-          <p className="font-custom text-2xl">Connection</p>
+          <p className="font-custom text-4xl">Connection</p>
         </div>
         <form method="post" onSubmit={handleSubmit} className="min-w-96">
           <div className="mb-4">
